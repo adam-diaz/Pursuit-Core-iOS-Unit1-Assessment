@@ -11,19 +11,19 @@ import Foundation
 class Game {
     
     
-    var deck: [Card]
+    var deck = [Card]()
     
-    var player: Player
+    var player = Player(score: 0, cards: [Card](), playerName: "ádan")
     
-    var hitPlayer: Bool
+    var hitPlayer = true
     
     var score = 0
     
-    init(deck: [Card], player: Player, hitPlayer: Bool) {
-        self.deck = deck
-        self.player = player
-        self.hitPlayer = hitPlayer
-    }
+//    init(deck: [Card], player: Player, hitPlayer: Bool) {
+//        self.deck = deck
+//        self.player = player
+//        self.hitPlayer = hitPlayer
+//    }
     
     var hasMoreCards: Bool {
         
@@ -56,26 +56,27 @@ class Game {
         
         if hasMoreCards == true {
             
-        func gameStatus() -> Any {
-            
-            return deck.popLast()!
-             
-            // may insert this method into the hitMe() method.
-               
-           }
-            
-        } else {
-            
-            
-            func computerVsPlayer() -> Int {
-                
-                return randomComputerScore
-                
-            }
+           print(deck.randomElement)
             
         }
-  
+    
+    }
+    
+    func computerVsPlayer() -> Int {
+        
+        return randomComputerScore
+        
+    }
+    
+    func gameStatus() {
+         
+        // could possibly insert this method into the hitMe() method.
+         
+        return
+      
     }
     
 }
+
+
 

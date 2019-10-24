@@ -71,8 +71,8 @@
 				503CB3592361F8EB00634252 /* FaceCard.swift */,
 				576D1E682356845300765B16 /* Card.swift */,
 				503CB35B2361F94700634252 /* Player.swift */,
-				576D1E5F2356839800765B16 /* main.swift */,
 				503CB35D2361FFC700634252 /* Game.swift */,
+				576D1E5F2356839800765B16 /* main.swift */,
 			);
 			path = BlackJack;
 			sourceTree = "<group>";
