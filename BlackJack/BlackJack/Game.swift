@@ -11,7 +11,7 @@ import Foundation
 class Game {
     
     
-    var deck = Card.newDeck(aceValue: 11)!
+    var deck = Card.newDeck(aceValue: 11)
     
     var player = Player(score: 0, cards: [Card](), playerName: "player 1")
     
