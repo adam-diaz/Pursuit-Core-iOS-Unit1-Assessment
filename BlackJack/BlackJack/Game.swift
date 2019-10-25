@@ -13,7 +13,7 @@ class Game {
     
     var deck = [Card]()
     
-    var player = Player(score: 0, cards: [Card](), playerName: "ádan")
+    var player = Player(score: 0, cards: [Card](), playerName: "player 1")
     
     var hitPlayer = true
     
@@ -27,7 +27,7 @@ class Game {
     
     var hasMoreCards: Bool {
         
-        return true || false
+        return true
     
     }
    
@@ -52,14 +52,13 @@ class Game {
         
     }
     
-    func hitMe() {
+    func hitMe() -> Card? {
         
-        if hasMoreCards == true {
-            
-           print(deck.randomElement)
-            
-        }
-    
+            deck = deck.shuffled()
+        
+            return deck.popLast()
+        
+        
     }
     
     func computerVsPlayer() -> Int {
@@ -68,12 +67,27 @@ class Game {
         
     }
     
-    func gameStatus() {
-         
-        // could possibly insert this method into the hitMe() method.
-         
-        return
-      
+    
+    func gameStatus(card: Card) -> Any {
+        // add the card to the player's cards
+        
+        player.cards.append(contentsOf: deck)
+        
+        if  player.score < 21 {
+            
+            print("\(player.score) would you like to hit or pass?")
+            
+        } else if player.score > 21 {
+            
+            print("\(player.score) Bust :( would you like to play again?")
+            
+        } else {
+            
+            
+        }
+   
+    return hasMoreCards
+    
     }
     
 }
