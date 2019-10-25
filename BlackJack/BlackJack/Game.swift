@@ -73,7 +73,7 @@ class Game {
         
         player.cards.append(contentsOf: deck)
         
-//       score += Card. // i need to add the value of the appended card to score
+        player.score += card.value // i need to add the value of the appended card to player score || card.value NOT Card.value
         
         if  player.score < 21 {
             

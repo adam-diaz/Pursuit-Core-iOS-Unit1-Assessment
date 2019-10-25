@@ -9,7 +9,7 @@
 import Foundation
 
 struct Player {
-    var score: Int
+    var score: Int 
     var cards = [Card]()
     var playerName: String
 }
