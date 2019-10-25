@@ -42,9 +42,9 @@ repeat {
     
     print(status)
 
-    print("Would you like to play again? \(yes) or \(no)")
+    print("Would you like to play again? \"yes\" or \"no\" ")
 
-    let playAgain = readLine ?? ""
+    let playAgain = readLine ?? "type yes or no"
 
     if playAgain == "yes" {
         
