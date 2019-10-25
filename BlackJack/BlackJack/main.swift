@@ -30,9 +30,7 @@ repeat {
     print("Would you like to hit or pass?")
     let userResponse = readLine() ?? "adán"
     print()
-    if userResponse == "Hit".lowercased() {
-        print(game.hitMe())
-    }
+    game.hitMe()
     repeat {
         guard let status = game.gameStatus(card: Card) else {
         break
