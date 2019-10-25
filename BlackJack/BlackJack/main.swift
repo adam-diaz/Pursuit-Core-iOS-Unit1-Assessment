@@ -26,25 +26,25 @@ Welcome To BlackJack
 repeat {
     
     print(gameTitle)
-    
-    var userResponse = readLine() ?? "Antonio"
+    sleep(1)
+    print("Would you like to hit or pass?")
+    let userResponse = readLine() ?? "Antonio"
     print()
     if userResponse == "Hit".lowercased() {
-        print(game.hitMe()!)
+        print(game.hitMe())
     }
     repeat {
         guard let status = game.gameStatus(card: Card) else {
         break
     }
-        print("Would you like to ")
-        
+        print()
+
     } while game.hasMoreCards
-    
-    print(status)
+
 
     print("Would you like to play again? \"yes\" or \"no\" ")
 
-    let playAgain = readLine ?? "type yes or no"
+    let playAgain = readLine() ?? "type yes or no"
 
     if playAgain == "yes" {
         

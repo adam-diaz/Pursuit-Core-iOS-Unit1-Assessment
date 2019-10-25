@@ -68,10 +68,12 @@ class Game {
     }
     
     
-    func gameStatus(card: Card) -> Any {
+    func gameStatus(card: Card) -> Int {
         // add the card to the player's cards
         
         player.cards.append(contentsOf: deck)
+        
+        score += Card.
         
         if  player.score < 21 {
             
@@ -86,7 +88,7 @@ class Game {
             
         }
    
-    return hasMoreCards
+        return player.score
     
     }
     
