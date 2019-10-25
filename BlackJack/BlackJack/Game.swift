@@ -11,7 +11,7 @@ import Foundation
 class Game {
     
     
-    var deck = Card.newDeck(aceValue: 11)
+    var deck = Card.newDeck(aceValue: 1)
     
     var player = Player(score: 0, cards: [Card](), playerName: "player 1")
     
@@ -56,11 +56,12 @@ class Game {
         
             deck = deck.shuffled()
         
-        let lastCard = deck.popLast() 
-        
-        player.cards.append(lastCard)
-       
-        player.score += lastCard.value
+        if let lastCard = deck.popLast() {
+            
+            player.cards.append(lastCard)
+            
+             player.score += lastCard.value
+        }
       
         return player.score
     }
@@ -72,7 +73,7 @@ class Game {
     }
     
     
-    func gameStatus(card: Card) -> Any {
+    func gameStatus(card: Card) -> Any? {
 
         
         if  player.score < 21 {

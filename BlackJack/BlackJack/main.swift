@@ -13,7 +13,7 @@ import Foundation
 
 let game = Game()
 
-game.newGame()
+//game.newGame()
 
 var gameOver = false
 
@@ -31,19 +31,20 @@ repeat {
     let userResponse = readLine() ?? "hit"
     print()
 //    game.hitMe()
-    
+   repeat {
     if userResponse == "hit" {
         print(game.hitMe())
+        print("hit")
     } else if userResponse == "pass" {
-        game.stopHits()
+        print(game.stopHits())
     }
-//    repeat {
-//        guard let status = game.gameStatus(card: Card) else {
-//        break
-//    }
-//        print()
-//
-//    } while game.hasMoreCards
+    
+        guard let status = game.gameStatus(card: Card) else {
+        break
+    }
+        print()
+
+    } while game.hasMoreCards
 
 
     print("Would you like to play again? \"yes\" or \"no\" ")
@@ -51,7 +52,7 @@ repeat {
     let playAgain = readLine() ?? "type yes or no"
 
     if playAgain == "yes" {
-        
+
         game.newGame()
         gameOver = true
     } else {
