@@ -28,7 +28,7 @@ repeat {
     print(gameTitle)
     sleep(1)
     print("Would you like to hit or pass?")
-    let userResponse = readLine() ?? "Antonio"
+    let userResponse = readLine() ?? "adán"
     print()
     if userResponse == "Hit".lowercased() {
         print(game.hitMe())

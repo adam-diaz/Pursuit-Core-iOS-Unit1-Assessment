@@ -73,7 +73,7 @@ class Game {
         
         player.cards.append(contentsOf: deck)
         
-        score += Card.
+//        score += Card.
         
         if  player.score < 21 {
             
