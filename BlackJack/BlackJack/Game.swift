@@ -61,6 +61,7 @@ class Game {
         player.cards.append(lastCard)
        
         player.score += lastCard.value
+      
         return player.score
     }
     
@@ -72,11 +73,7 @@ class Game {
     
     
     func gameStatus(card: Card) -> Any {
-        // add the card to the player's cards
-        
-        
-        
-//        player.score += card.value // i need to add the value of the appended card to player score || card.value NOT Card.value
+
         
         if  player.score < 21 {
             
