@@ -11,7 +11,7 @@ import Foundation
 class Game {
     
     
-    var deck = [Card]()
+    var deck = Card.newDeck(aceValue: 11)!
     
     var player = Player(score: 0, cards: [Card](), playerName: "player 1")
     
@@ -27,7 +27,7 @@ class Game {
     
     var hasMoreCards: Bool {
         
-        return true
+        return !deck.isEmpty
     
     }
    
@@ -52,13 +52,16 @@ class Game {
         
     }
     
-    func hitMe() -> Card? {
+    func hitMe() -> Int {
         
             deck = deck.shuffled()
         
-            return deck.popLast()
+        let lastCard = deck.popLast() 
         
-        
+        player.cards.append(lastCard)
+       
+        player.score += lastCard.value
+        return player.score
     }
     
     func computerVsPlayer() -> Int {
@@ -71,9 +74,9 @@ class Game {
     func gameStatus(card: Card) -> Any {
         // add the card to the player's cards
         
-        player.cards.append(contentsOf: deck)
         
-        player.score += card.value // i need to add the value of the appended card to player score || card.value NOT Card.value
+        
+//        player.score += card.value // i need to add the value of the appended card to player score || card.value NOT Card.value
         
         if  player.score < 21 {
             

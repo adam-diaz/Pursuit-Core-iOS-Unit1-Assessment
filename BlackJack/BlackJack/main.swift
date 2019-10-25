@@ -28,16 +28,22 @@ repeat {
     print(gameTitle)
     sleep(1)
     print("Would you like to hit or pass?")
-    let userResponse = readLine() ?? "adán"
+    let userResponse = readLine() ?? "hit"
     print()
-    game.hitMe()
-    repeat {
-        guard let status = game.gameStatus(card: Card) else {
-        break
+//    game.hitMe()
+    
+    if userResponse == "hit" {
+        print(game.hitMe())
+    } else if userResponse == "pass" {
+        game.stopHits()
     }
-        print()
-
-    } while game.hasMoreCards
+//    repeat {
+//        guard let status = game.gameStatus(card: Card) else {
+//        break
+//    }
+//        print()
+//
+//    } while game.hasMoreCards
 
 
     print("Would you like to play again? \"yes\" or \"no\" ")
