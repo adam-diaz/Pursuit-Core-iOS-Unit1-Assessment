@@ -13,7 +13,9 @@ import Foundation
 
 let game = Game()
 
-var restart = false
+game.newGame()
+
+var gameOver = false
 
 let gameTitle = """
 
@@ -24,13 +26,35 @@ Welcome To BlackJack
 repeat {
     
     print(gameTitle)
-
-    let userInput = readLine() ?? ""
+    
+    var userResponse = readLine() ?? "Antonio"
     print()
-    
-    game.hitMe(userInput)
-    
-    repeat {
-        guard let
+    if userResponse == "Hit".lowercased() {
+        print(game.hitMe()!)
     }
-} while restart
+    repeat {
+        guard let status = game.gameStatus(card: Card) else {
+        break
+    }
+        print("Would you like to ")
+        
+    } while game.hasMoreCards
+    
+    print(status)
+
+    print("Would you like to play again? \(yes) or \(no)")
+
+    let playAgain = readLine ?? ""
+
+    if playAgain == "yes" {
+        
+        game.newGame()
+        gameOver = true
+    } else {
+        gameOver = false
+    }
+    
+    
+} while gameOver
+
+
