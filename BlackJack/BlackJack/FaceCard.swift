@@ -12,16 +12,4 @@ enum FaceCard: String, CaseIterable {
     case jack = "🎃"
     case queen = "👸🏾"
     case king = "🤴🏽"
-    
-//    var faceRaw: String {
-//        switch self {
-//
-//        case .jack:
-//        return "🎃"
-//        case .queen:
-//        return "👸🏾"
-//        case .king:
-//        return "🤴🏽"
-//    }
-//}
 }

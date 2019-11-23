@@ -24,27 +24,30 @@ Welcome To BlackJack
 """
 
 repeat {
+   print(gameTitle)
     
-    print(gameTitle)
     sleep(1)
     print("Would you like to hit or pass?")
+    
+    repeat {
+    
     let userResponse = readLine() ?? "hit"
     print()
-//    game.hitMe()
-   repeat {
+
+   
     if userResponse == "hit" {
         print(game.hitMe())
-        print("hit")
+//        print("hit")
     } else if userResponse == "pass" {
         print(game.stopHits())
     }
-    
-        guard let status = game.gameStatus(card: Card) else {
+   
+        guard let _ = game.gameStatus() else {
         break
     }
         print()
 
-    } while game.hasMoreCards
+    } while game.hitPlayer
 
 
     print("Would you like to play again? \"yes\" or \"no\" ")

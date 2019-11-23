@@ -18,13 +18,7 @@ class Game {
     var hitPlayer = true
     
     var score = 0
-    
-//    init(deck: [Card], player: Player, hitPlayer: Bool) {
-//        self.deck = deck
-//        self.player = player
-//        self.hitPlayer = hitPlayer
-//    }
-    
+
     var hasMoreCards: Bool {
         
         return !deck.isEmpty
@@ -38,15 +32,17 @@ class Game {
     
     func newGame() {
         
-        score = 0
-       
-        deck.removeAll()
-   
+        player.score = 0
+        
+        deck = Card.newDeck(aceValue: 1)
+        
+        hitPlayer = true
+        
+        player.cards.removeAll()
+        
     }
     
     func stopHits() -> Int {
-        
-        // will run randomComputerScore in here
         
         return randomComputerScore
         
@@ -73,7 +69,7 @@ class Game {
     }
     
     
-    func gameStatus(card: Card) -> Any? {
+    func gameStatus() -> Any? {
 
         
         if  player.score < 21 {
@@ -83,10 +79,14 @@ class Game {
         } else if player.score > 21 {
             
             print("\(player.score) Bust :( would you like to play again?")
+           
+            hitPlayer = false
             
-        } else {
+        } else if player.score == 21 {
             
+            print("\(player.score) You win! Would you like to play again?")
             
+            hitPlayer = false
         }
    
         return hasMoreCards

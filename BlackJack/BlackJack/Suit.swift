@@ -14,18 +14,7 @@ enum Suit: String, CaseIterable {
     case spade = "♠️"
     case club = "♣️"
 
-//    var suitRaw: String {
-//        switch self {
-//        case .diamond:
-//            return "♦️"
-//        case .heart:
-//            return "♥️"
-//        case .spade:
-//            return "♠️"
-//        case .club:
-//            return "♣️"
-//        }
-//    }
+
 }
 
 
