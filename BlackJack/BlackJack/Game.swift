@@ -58,6 +58,8 @@ class Game {
             
              player.score += lastCard.value
         }
+        
+       print(player.cards.map({$0.stringify() }))
       
         return player.score
     }
@@ -73,6 +75,7 @@ class Game {
 
         
         if  player.score < 21 {
+            
             
             print("\(player.score) would you like to hit or pass?")
             
